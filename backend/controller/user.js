@@ -3,8 +3,11 @@
 import user from '../db/model/user.js';
 import bcrypt from 'bcrypt';
 
+import sendMail from '../helper/sendMail.js';
+
 export default {
   registration: async (req, res) => {
+    const subject = "otp for user registration"
     const { name, email, password } = req.body;
     try {
       if (!name) {
@@ -20,12 +23,19 @@ export default {
       if (alreadyUser) {
         return res.send('with this email user already exist');
       }
+      const otp= Math.floor(100000 + Math.random() * 900000)
       const userData = new user({
         name,
         email,
+        otp,
         password,
       });
       const userCreated = userData.save();
+      sendMail(
+        userData.email,
+        userData.otp,
+        subject,
+      );
       return res.send({
         message: 'user created successfully',
         user: userCreated,
