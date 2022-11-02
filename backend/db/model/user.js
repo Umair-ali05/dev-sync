@@ -13,6 +13,13 @@ const userSchema = new schema({
     type: String,
     unique: true,
   },
+  otp:{
+    type:Number,
+  },
+  isActive:{
+    type:Boolean,
+    default:false,
+  },
   password: {
     type: String,
   },

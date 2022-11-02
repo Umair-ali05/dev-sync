@@ -11,7 +11,7 @@
     <section>
       <div class="container">
         <div class="user signinBx">
-          <div class="imgBx"><img src="/front-end/images/Heading.png" alt="" /></div>
+          <div class="imgBx"><img src="images/Heading.png" alt="" /></div>
           <div class="formBx">
             
             <form action="http://localhost:4444/api/login" method="post">
@@ -30,12 +30,11 @@
         </div>
         <div class="user signupBx">
           <div class="formBx">
-            <form action="" onsubmit="return false;">
+            <form action="http://localhost:4444/api/register" method="post">
               <h2>Create an account</h2>
               <input type="name" name="name" placeholder="Name" required/>
-              <input type="email" name="" placeholder="Email Address" required/>
+              <input type="email" name="email" placeholder="Email Address" required/>
               <input type="password" name="password" placeholder="Create Password" required/>
-              <input type="password" name="password" placeholder="Confirm Password" required/>
               <input type="submit" name="" id="sign-up" value="Sign Up" />
               
               <p class="signup">
@@ -44,10 +43,10 @@
               </p>
             </form>
           </div>
-          <div class="imgBx"><img src="/front-end/images/Heading.png" alt="" /></div>
+          <div class="imgBx"><img src="images/Heading.png" alt="" /></div>
         </div>
       </div>
     </section>
-    <script src="/sign.js"></script>
+    <script src="sign.js"></script>
   </body>
 </html>
